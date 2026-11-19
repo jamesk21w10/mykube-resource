@@ -1,0 +1,15 @@
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: hello-world-image-updater
+  namespace: argocd
+spec:
+  commonUpdateSettings:
+    updateStrategy: "newest-build"
+  writeBackConfig:
+    method: "argocd"
+  applicationRefs:
+    - namePattern: "hello-world*"
+      images:
+        - alias: "<ALIAS>"
+          imageName: "<IMAGE>"
