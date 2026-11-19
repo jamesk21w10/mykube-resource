@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: <IMAGE>
+        image: jamesk21w10/k8smytomcat
         ports:
         - containerPort: 8080
